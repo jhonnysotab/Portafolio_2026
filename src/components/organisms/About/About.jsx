@@ -2,7 +2,7 @@ import SectionHeader from '../../atoms/SectionHeader/SectionHeader';
 import StatBox from '../../molecules/StatBox/StatBox';
 import styles from './About.module.css';
 import { useLanguage } from '../../../hooks/useLanguage';
-
+import avatarImg from '../../../assets/jhonnyStudiosGibly.png';
 const stats = [
   { number: '6+', label: 'Años exp.' },
   { number: '15+', label: 'Proyectos' },
@@ -24,7 +24,7 @@ const About = () => {
           <div className={styles.avatar}>
             <div className={styles.ring} />
             <div className={styles.ring2} />
-            <div className={styles.avatarImg}><img src="src\assets\jhonnyStudiosGibly.png"/></div>
+            <div className={styles.avatarImg}><img src={avatarImg}/></div>
           </div>
           <div className={styles.stats}>
             {stats.map((stat, index) => (

@@ -1,9 +1,13 @@
 import styles from './Footer.module.css';
+import { useLanguage } from '../../../hooks/useLanguage';
 
 const Footer = () => {
+  
+    const { t } = useLanguage();
+    
   return (
     <footer className={styles.footer}>
-      <p>© 2024 Jhonny Developer · Construido con pasión y ☕ · Madrid, España</p>
+      <p>{t('footer.text')}</p>
     </footer>
   );
 };

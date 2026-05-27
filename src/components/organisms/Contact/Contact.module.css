@@ -50,7 +50,7 @@
   left: 20px;
   transform: translateY(-50%);
   font-size: 13px;
-  color: rgba(224, 224, 255, 0.3);
+  color: rgb(255, 255, 255);
   pointer-events: none;
   transition: all 0.2s;
   letter-spacing: 0.5px;
@@ -91,7 +91,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(224, 224, 255, 0.5);
+  color:var(--sociallink);
   text-decoration: none;
   transition: all 0.3s;
   font-family: 'Courier New', monospace;

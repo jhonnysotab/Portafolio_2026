@@ -1,5 +1,5 @@
 .nav {
-  position: fixed;
+  position: sticky;        /* ← en vez de fixed */
   top: 0;
   width: 100%;
   z-index: 100;
@@ -9,7 +9,6 @@
   align-items: center;
   background: var(--nav-bg);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
@@ -24,8 +23,8 @@
 .menu {
   list-style: none;
   display: flex;
-  gap: 32px;
-  margin: 0;
+  gap: 10px;
+  position: sticky;
   padding: 0;
 }
 

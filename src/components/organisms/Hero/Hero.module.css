@@ -16,6 +16,9 @@
   color: #fff;
   position: relative;
   letter-spacing: -2px;
+  /* Evita que el texto desborde en móvil */
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .glitch::before,
@@ -55,11 +58,21 @@
 }
 
 .typewriter {
-  font-size: clamp(16px, 2.5vw, 24px);
+  font-size: clamp(14px, 2.5vw, 24px);
   color: var(--neon);
   margin: 16px 0 32px;
-  min-height: 36px;
   letter-spacing: 2px;
+
+  /* ── Fix: reserva espacio fijo para que no mueva el layout ── */
+  width: 100%;
+  max-width: 480px;
+  min-height: 60px;           /* dos líneas de margen por si el texto wrappea */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-break: break-word;     /* evita overflow horizontal */
+  overflow: hidden;
 }
 
 .cursor {
@@ -67,10 +80,11 @@
   color: var(--neon);
   animation: blink 1s infinite;
   font-weight: 100;
+  flex-shrink: 0;             /* el cursor no se comprime */
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
+  0%, 50%   { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
 
@@ -83,4 +97,29 @@
 
 .buttons a {
   text-decoration: none;
+}
+
+/* ── Móvil ── */
+@media (max-width: 600px) {
+  .hero {
+    padding: 0 16px;
+  }
+
+  .typewriter {
+    font-size: clamp(13px, 4vw, 18px);
+    max-width: 100%;
+    min-height: 56px;
+    letter-spacing: 1px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .buttons a {
+    width: 100%;
+    text-align: center;
+  }
 }

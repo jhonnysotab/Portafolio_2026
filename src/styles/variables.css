@@ -11,7 +11,7 @@
   --glow-color: rgba(0, 245, 212, 0.04);
   --card-bg: #0a0a1a;
   --card-bg-alt: rgba(0, 245, 212, 0.02);
-  --nav-bg: rgba(6, 6, 18, 0.7);
+  --nav-bg: rgba(6, 6, 18, 0.588);
   --section-bg: rgba(13, 13, 31, 0.5);
   --input-bg: rgba(0, 245, 212, 0.02);
   --input-border: rgba(0, 245, 212, 0.15);
@@ -34,6 +34,8 @@
   --bg-project-card: #0a0a1a;
   --number-project-card: rgba(0, 245, 212, 0.06);
   --tagcolor: rgba(224, 224, 255, 0.4);
+  --sociallink:#ffff;
+  --copytext:#ffff;
 
 }
 
@@ -49,7 +51,7 @@
   --glow-color: rgba(9, 9, 9, 0.174);
   --card-bg: #ffffff;
   --card-bg-alt: rgba(13, 148, 136, 0.03);
-  --nav-bg: rgba(167, 167, 167, 0.701);
+  --nav-bg: rgba(167, 167, 167, 0.344);
   --section-bg: rgba(226, 232, 240, 0.6);
   --input-bg: #ffffff;
   --input-border: rgba(13, 148, 136, 0.2);
@@ -72,4 +74,6 @@
   --number-project-card: rgba(100, 100, 100, 0.467);
   --tagcolor: rgb(208, 208, 208);
   --grouptextarea: rgba(175, 175, 175, 0.782); 
+  --sociallink:#000;
+  --copytext:#000;
 }
