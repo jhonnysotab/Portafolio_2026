@@ -1,0 +1,75 @@
+:root,
+[data-theme="dark"] {
+  --neon: #00f5d4;
+  --neon2: #7b2fff;
+  --dark: #060612;
+  --dark2: #0d0d1f;
+  --text: #e0e0ff;
+  --text-secondary: rgba(224, 224, 255, 0.7);
+  --text-muted: #e0e0ff;
+  --border-color: rgba(0, 245, 212, 0.1);
+  --glow-color: rgba(0, 245, 212, 0.04);
+  --card-bg: #0a0a1a;
+  --card-bg-alt: rgba(0, 245, 212, 0.02);
+  --nav-bg: rgba(6, 6, 18, 0.7);
+  --section-bg: rgba(13, 13, 31, 0.5);
+  --input-bg: rgba(0, 245, 212, 0.02);
+  --input-border: rgba(0, 245, 212, 0.15);
+  --gradient-start: #1a1a3e;
+  --gradient-end: #2d0050;
+  --terminal-bg: #0a0a0a;
+  --terminal-header: #111;
+  --tag-border: rgba(0, 245, 212, 0.2);
+  --shadow: rgba(0, 245, 212, 0.1);
+  --stat-bg: rgba(0, 245, 212, 0.03);
+  --stat-border: rgba(0, 245, 212, 0.15);
+  --cursor-opacity:0.5;
+  --title:  #fafafa;
+  --esin:  rgba(224, 224, 255, 0.4);
+  --button-bg:#00f5d4;
+  --skill-bg:rgba(37, 37, 97, 0.132);
+  --skill-bg-module:rgba(0, 245, 212, 0.02);
+  --skill-borde-: rgba(0, 245, 212, 0.1);
+  --text-tag:  rgba(224, 224, 255, 0.5);
+  --bg-project-card: #0a0a1a;
+  --number-project-card: rgba(0, 245, 212, 0.06);
+  --tagcolor: rgba(224, 224, 255, 0.4);
+
+}
+
+[data-theme="light"] {
+  --neon: #030325;
+  --neon2: #586effd0;
+  --dark: #ffffff60;
+  --dark2: #e2e8f0;
+  --text: #1e293b;
+  --text-secondary: rgba(30, 41, 59, 0.85);
+  --text-muted: rgba(48, 57, 146, 0.836);
+  --border-color: rgba(60, 60, 60, 0.622);
+  --glow-color: rgba(9, 9, 9, 0.174);
+  --card-bg: #ffffff;
+  --card-bg-alt: rgba(13, 148, 136, 0.03);
+  --nav-bg: rgba(167, 167, 167, 0.701);
+  --section-bg: rgba(226, 232, 240, 0.6);
+  --input-bg: #ffffff;
+  --input-border: rgba(13, 148, 136, 0.2);
+  --gradient-start: #e0e7ff;
+  --gradient-end: #e0f2fe;
+  --terminal-bg: #1e293b;
+  --terminal-header: #334155;
+  --tag-border: rgba(46, 51, 121, 0.327);
+  --shadow: rgba(13, 148, 136, 0.08);
+  --stat-bg: rgba(13, 148, 136, 0.05);
+  --stat-border: rgba(13, 148, 136, 0.2);
+  --cursor-opacity:2;
+  --title: #000;
+  --esin:  rgba(21, 21, 21, 0.733);
+  --button-bg:#6366f1;
+  --skill-bg: linear-gradient(360deg,rgba(87, 83, 83, 0) 28%, rgba(163, 163, 163, 0) 61%);
+  --skill-bg-module: linear-gradient(360deg, rgba(248, 248, 248, 0.708), rgba(255, 255, 255, 0.122));
+  --text-tag:  rgb(14, 14, 14);
+  --bg-project-card: linear-gradient(0deg,rgba(41, 41, 41, 1) 0%, rgba(130, 130, 130, 0.73) 21%, rgba(247, 251, 252, 0.09) 73%);
+  --number-project-card: rgba(100, 100, 100, 0.467);
+  --tagcolor: rgb(208, 208, 208);
+  --grouptextarea: rgba(175, 175, 175, 0.782); 
+}

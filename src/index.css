@@ -1,0 +1,137 @@
+/* ============================================================
+   GLOBALS — reset, variables, base
+   ============================================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --neon:        #00f5d4;
+  --neon2:       #7b2fff;
+  --dark:        #060612;
+  --dark2:       #0d0d1f;
+  --text:        #e0e0ff;
+  --text-dim:    rgba(224, 224, 255, 0.7);
+  --border:      rgba(0, 245, 212, 0.1);
+  --border-hover:rgba(0, 245, 212, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Scroll reveal utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity  0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Section shared */
+.sec-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.sec-tag {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: 12px;
+}
+.sec-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: #fff;
+}
+.sec-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+  margin: 16px auto 0;
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 32px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-primary {
+  background: var(--neon);
+  color: #000;
+  border: none;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.btn-primary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 245, 212, 0.5);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--neon);
+  border: 1px solid var(--neon);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.btn-outline:hover {
+  background: rgba(0, 245, 212, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Tag pill */
+.tag {
+  font-size: 10px;
+  padding: 3px 8px;
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Animations */
+@keyframes spin      { to { transform: rotate(360deg); } }
+@keyframes blink     { 50% { opacity: 0; } }
+@keyframes fadeIn    { to  { opacity: 1; } }
+@keyframes scrollAnim {
+  0%   { transform: scaleY(0);  transform-origin: top; }
+  50%  { transform: scaleY(1);  transform-origin: top; }
+  51%  { transform: scaleY(1);  transform-origin: bottom; }
+  100% { transform: scaleY(0);  transform-origin: bottom; }
+}
+@keyframes glitch1 {
+  0%,90%,100% { transform: translate(0); }
+  91%         { transform: translate(-3px, 1px); }
+  94%         { transform: translate(3px, -1px); }
+  97%         { transform: translate(-2px, 2px); }
+}
+@keyframes glitch2 {
+  0%,90%,100% { transform: translate(0); }
+  92%         { transform: translate(3px, 1px); }
+  95%         { transform: translate(-3px, -1px); }
+  98%         { transform: translate(2px, -2px); }
+}

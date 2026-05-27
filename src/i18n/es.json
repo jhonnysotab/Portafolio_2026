@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "experience":"Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "experience": {
+    "tag": "// 03. experiencia",
+    "title": "Trayectoria Profesional",
+    "downloadCv": "Descargar CV"
+  },
+  "hero": {
+    "title": "Jhonny Developer",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Descargar CV",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "tag": "// 01. sobre mí",
+    "title": "Full Stack Developer",
+    "description1": "Soy un desarrollador <strong>Full Stack con 6 años de experiencia</strong> especializado en el ecosistema Java. Diseño y construyo aplicaciones robustas, escalables y de alto rendimiento.",
+    "description2": "Mi enfoque combina arquitectura sólida en backend con interfaces modernas en frontend, siempre pensando en rendimiento, mantenibilidad y experiencia de usuario.",
+    "description3": "Apasionado por los microservicios, el clean code y las buenas prácticas de ingeniería de software.",
+    "stats": {
+      "experience": "Años exp.",
+      "projects": "Proyectos",
+      "clients": "Clientes",
+      "uptime": "Uptime"
+    }
+  },
+  "skills": {
+    "tag": "// 02. habilidades",
+    "title": "Stack tecnológico"
+  },
+  "projects": {
+    "tag": "// 04. proyectos",
+    "title": "Trabajo destacado",
+    "demo": "Ver demo",
+    "github": "GitHub"
+  },
+  "terminal": {
+    "experience": "6 años construyendo sistemas que escalan"
+  },
+  "contact": {
+    "tag": "// 05. contacto",
+    "title": "Trabajemos juntos",
+    "name": "Nombre",
+    "email": "Email",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "sent": "✓ Enviado!"
+  },
+  "footer": {
+    "text": "© 2024 Jhonny Developer · Construido con pasión y ☕ · Madrid, España",
+    "textEn": "© 2024 Jhonny Developer · Built with passion and ☕ · Madrid, Spain"
+  }
+}

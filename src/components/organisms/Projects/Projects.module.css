@@ -1,0 +1,19 @@
+.projects {
+  padding: 120px 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 80px 24px;
+  }
+}

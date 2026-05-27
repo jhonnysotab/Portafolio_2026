@@ -1,0 +1,14 @@
+.tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  border: 1px solid var(--tag-border);
+  color:var(--text-tag);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.purple {
+  border-color: rgba(123, 47, 255, 0.3);
+  color: var(--tagcolor)
+}

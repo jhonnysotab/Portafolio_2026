@@ -1,0 +1,25 @@
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.tag {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: var(--title) !important;
+}
+
+.line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+  margin: 16px auto 0;
+}

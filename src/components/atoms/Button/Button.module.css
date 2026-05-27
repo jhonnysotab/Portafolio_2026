@@ -1,0 +1,37 @@
+.btn {
+  padding: 14px 32px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  border: none;
+  font-family: inherit;
+}
+
+.primary {
+  background: var(--button-bg);
+  color: #000;
+}
+
+.primary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 245, 212, 0.5);
+}
+
+.outline {
+  background: transparent;
+  color: var(--neon);
+  border: 1px solid var(--neon);
+}
+
+.outline:hover {
+  background: rgba(0, 245, 212, 0.1);
+  transform: translateY(-2px);
+}

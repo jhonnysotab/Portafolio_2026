@@ -1,0 +1,86 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.glitch {
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 800;
+  color: #fff;
+  position: relative;
+  letter-spacing: -2px;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  color: var(--neon);
+  animation: glitch1 3s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.glitch::after {
+  color: var(--neon2);
+  animation: glitch2 3s infinite;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch1 {
+  0%, 90%, 100% { transform: translate(0); }
+  91% { transform: translate(-3px, 1px); }
+  94% { transform: translate(3px, -1px); }
+  97% { transform: translate(-2px, 2px); }
+}
+
+@keyframes glitch2 {
+  0%, 90%, 100% { transform: translate(0); }
+  92% { transform: translate(3px, 1px); }
+  95% { transform: translate(-3px, -1px); }
+  98% { transform: translate(2px, -2px); }
+}
+
+.typewriter {
+  font-size: clamp(16px, 2.5vw, 24px);
+  color: var(--neon);
+  margin: 16px 0 32px;
+  min-height: 36px;
+  letter-spacing: 2px;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--neon);
+  animation: blink 1s infinite;
+  font-weight: 100;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.buttons a {
+  text-decoration: none;
+}

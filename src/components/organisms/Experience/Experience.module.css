@@ -1,0 +1,52 @@
+.experience {
+  padding: 120px 48px;
+  position: relative;
+  z-index: 1;
+  background: var(--section-bg);
+  transition: background-color 0.3s ease;
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--neon), var(--border-color));
+  transform: translateX(-50%);
+  display: none; /* Oculto en desktop porque cada item tiene su línea */
+}
+
+.resumeButton {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.downloadCv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 80px 24px;
+  }
+  
+  .timeline::before {
+    display: block;
+    left: 24px;
+  }
+  
+  .resumeButton {
+    margin-top: 32px;
+  }
+}

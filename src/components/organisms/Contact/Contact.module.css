@@ -1,0 +1,114 @@
+.contact {
+  padding: 120px 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.group {
+  position: relative;
+}
+
+.group input,
+.group textarea {
+  width: 100%;
+  background:var(--grouptextarea);
+  border: 1px solid rgba(0, 245, 212, 0.15);
+  color: var(--text);
+  padding: 16px 20px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s;
+  border-radius: 10px;
+}
+
+.group input:focus,
+.group textarea:focus {
+  border-color: var(--neon);
+  box-shadow: 0 0 20px rgba(104, 104, 104, 0.05);
+}
+
+.group textarea {
+  height: 140px;
+  resize: vertical;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: rgba(224, 224, 255, 0.3);
+  pointer-events: none;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+  background: transparent;
+  padding: 0 4px;
+}
+
+.group textarea ~ .label {
+  top: 18px;
+  transform: none;
+}
+
+.group input:focus ~ .label,
+.group input:not(:placeholder-shown) ~ .label,
+.group textarea:focus ~ .label,
+.group textarea:not(:placeholder-shown) ~ .label {
+  top: -10px;
+  left: 12px;
+  font-size: 11px;
+  color: var(--neon);
+  background: var(--dark);
+  padding: 0 6px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.socialLink {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(224, 224, 255, 0.5);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.socialLink:hover {
+  border-color: var(--neon);
+  color: var(--neon);
+  background: rgba(0, 245, 212, 0.05);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 80px 24px;
+  }
+}
