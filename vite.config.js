@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/Portafolio_2026/',
+  base: 'npm run deploy',
   plugins: [react()],
   css: {
     modules: {
