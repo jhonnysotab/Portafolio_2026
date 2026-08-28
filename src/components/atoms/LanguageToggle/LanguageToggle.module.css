@@ -1,9 +1,9 @@
 .toggle {
   display: flex;
   align-items: center;
-  background: rgba(0, 245, 212, 0.05);
-  border: 1px solid rgba(0, 245, 212, 0.15);
-  border-radius: 20px;
+  background: rgba(var(--neon-rgb), 0.05);
+  border: 1px solid rgba(var(--neon-rgb), 0.15);
+  border-radius: 4px;
   padding: 4px;
   cursor: pointer;
   position: relative;
@@ -12,8 +12,8 @@
 }
 
 .toggle:hover {
-  border-color: rgba(0, 245, 212, 0.3);
-  background: rgba(0, 245, 212, 0.08);
+  border-color: rgba(var(--neon-rgb), 0.3);
+  background: rgba(var(--neon-rgb), 0.08);
 }
 
 .option {
@@ -30,13 +30,13 @@
 }
 
 .active {
-  color: #a3a3a3;
+  color: var(--lang-active-text);
 }
 
 .divider {
   width: 1px;
   height: 16px;
-  background: rgba(0, 245, 212, 0.2);
+  background: rgba(var(--neon-rgb), 0.2);
   z-index: 1;
 }
 
@@ -47,9 +47,9 @@
   width: calc(50% - 3px);
   height: calc(100% - 4px);
   background: var(--neon);
-  border-radius: 18px;
+  border-radius: 2px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 10px rgba(0, 245, 212, 0.3);
+  box-shadow: 0 0 10px rgba(var(--neon-rgb), 0.3);
 }
 
 .indicatorRight {

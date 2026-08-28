@@ -53,9 +53,16 @@
   background: linear-gradient(135deg, #1a1a3e, #2d0050);
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 80px;
-  border: 2px solid rgba(0, 245, 212, 0.2);
+  border: 2px solid rgba(var(--neon-rgb), 0.2);
   overflow: hidden;
+}
+
+.avatarImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .stats {
@@ -68,7 +75,11 @@
 .text {
   font-size: 15px;
   line-height: 1.8;
-  color: var(--neo3);
+  color: var(--text-secondary);
+}
+
+.text strong {
+  color: var(--neon);
 }
 
 .text p {

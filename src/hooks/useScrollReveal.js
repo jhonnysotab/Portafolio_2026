@@ -13,11 +13,26 @@ export const useScrollReveal = () => {
       { threshold: 0.15 }
     );
 
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    // Las secciones cargadas de forma diferida (React.lazy) montan su
+    // contenido después de este efecto, así que sin este observer
+    // secundario sus elementos `.reveal` nunca se detectan y quedan
+    // invisibles (opacity: 0) para siempre.
+    const mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType !== Node.ELEMENT_NODE) return;
+          if (node.classList?.contains('reveal')) observer.observe(node);
+          node.querySelectorAll?.('.reveal').forEach((el) => observer.observe(el));
+        });
+      });
+    });
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      elements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+      mutationObserver.disconnect();
     };
   }, []);
 };

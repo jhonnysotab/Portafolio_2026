@@ -1,20 +1,21 @@
 import { forwardRef } from 'react';
 import styles from './Button.module.css';
 
-const Button = forwardRef(({ 
-  children, 
-  variant = 'primary', 
-  className = '', 
-  ...props 
+const Button = forwardRef(({
+  as: Component = 'button',
+  children,
+  variant = 'primary',
+  className = '',
+  ...props
 }, ref) => {
   return (
-    <button
+    <Component
       ref={ref}
       className={`${styles.btn} ${styles[variant]} ${className}`}
       {...props}
     >
       {children}
-    </button>
+    </Component>
   );
 });
 

@@ -9,12 +9,21 @@
   text-transform: uppercase;
   color: var(--neon);
   margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .title {
-  font-size: clamp(32px, 5vw, 48px);
-  font-weight: 800;
+  font-family: var(--font-pixel-display);
+  font-size: clamp(38px, 6vw, 58px);
+  font-weight: 400;
   color: var(--title) !important;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.12s,
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.12s;
 }
 
 .line {
@@ -22,4 +31,31 @@
   height: 2px;
   background: linear-gradient(90deg, var(--neon), var(--neon2));
   margin: 16px auto 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+}
+
+.header:global(.visible) .tag {
+  opacity: 1;
+  transform: none;
+}
+
+.header:global(.visible) .title {
+  opacity: 1;
+  transform: none;
+}
+
+.header:global(.visible) .line {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tag,
+  .title,
+  .line {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
 }

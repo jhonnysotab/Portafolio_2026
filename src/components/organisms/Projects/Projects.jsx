@@ -1,24 +1,26 @@
 import SectionHeader from '../../atoms/SectionHeader/SectionHeader';
 import ProjectCard from '../../molecules/ProjectCard/ProjectCard';
-import { proyectos, projects } from '../../../data/projects';
 import { useLanguage } from '../../../hooks/useLanguage';
 import styles from './Projects.module.css';
 
 const Projects = () => {
-  const { language, t } = useLanguage();
-  
-  // Seleccionar datos según el idioma
-  const data = language === 'es' ? proyectos : projects;
+  const { t } = useLanguage();
+  const items = t('projects.items');
 
   return (
     <section id="projects" className={styles.projects}>
-      <SectionHeader 
+      <SectionHeader
         tag={t('projects.tag')}
         title={t('projects.title')}
       />
       <div className={styles.grid}>
-        {data.map((project) => (
-          <ProjectCard key={project.id} {...project} />
+        {items.map((project) => (
+          <ProjectCard
+            key={project.id}
+            {...project}
+            demoLabel={t('projects.demo')}
+            githubLabel={t('projects.github')}
+          />
         ))}
       </div>
     </section>

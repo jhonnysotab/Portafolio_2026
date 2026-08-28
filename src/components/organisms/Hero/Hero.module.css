@@ -10,12 +10,28 @@
   z-index: 1;
 }
 
+/*
+ * Ancho explícito: sin esto, el wrapper es un flex item con
+ * align-items:center (no stretch), por lo que su ancho se ajusta
+ * al contenido — y como el texto de la máquina de escribir cambia
+ * de largo en cada frase, el bloque entero "encogía y crecía" en
+ * pantallas chicas. Fijar el ancho al 100% del .hero lo estabiliza.
+ */
+.content {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .glitch {
-  font-size: clamp(48px, 8vw, 96px);
-  font-weight: 800;
-  color: #fff;
+  font-family: var(--font-pixel-display);
+  font-size: clamp(56px, 10vw, 120px);
+  font-weight: 400;
+  color: var(--title);
   position: relative;
-  letter-spacing: -2px;
+  letter-spacing: 1px;
   /* Evita que el texto desborde en móvil */
   word-break: break-word;
   max-width: 100%;

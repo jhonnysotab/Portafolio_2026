@@ -5,6 +5,8 @@ import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-i
 import { faHouse, faPaperPlane, faSpinner, faCircleCheck, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import SectionHeader from '../../atoms/SectionHeader/SectionHeader';
 import Button from '../../atoms/Button/Button';
+import { useLanguage } from '../../../hooks/useLanguage';
+import profile from '../../../data/profile.json';
 import styles from './Contact.module.css';
 
 // ── EmailJS config (variables en .env) ──────────────────────
@@ -20,12 +22,12 @@ const STATUS = {
 };
 
 // ── Subcomponente: botón con estado ─────────────────────────
-function SubmitButton({ status }) {
+function SubmitButton({ status, labels }) {
   const config = {
-    [STATUS.IDLE]:    { icon: faPaperPlane,        text: 'Enviar mensaje',  spin: false },
-    [STATUS.LOADING]: { icon: faSpinner,           text: 'Enviando…',       spin: true  },
-    [STATUS.SUCCESS]: { icon: faCircleCheck,       text: '¡Enviado!',       spin: false },
-    [STATUS.ERROR]:   { icon: faCircleExclamation, text: 'Error al enviar', spin: false },
+    [STATUS.IDLE]:    { icon: faPaperPlane,        text: labels.send,    spin: false },
+    [STATUS.LOADING]: { icon: faSpinner,           text: labels.sending, spin: true  },
+    [STATUS.SUCCESS]: { icon: faCircleCheck,       text: labels.sent,    spin: false },
+    [STATUS.ERROR]:   { icon: faCircleExclamation, text: labels.error,   spin: false },
   };
   const { icon, text, spin } = config[status];
 
@@ -44,6 +46,8 @@ function SubmitButton({ status }) {
 
 // ── Componente principal ─────────────────────────────────────
 const Contact = () => {
+  const { t } = useLanguage();
+  const labels = t('contact');
   const formRef = useRef(null);
   const [status,   setStatus]   = useState(STATUS.IDLE);
   const [errorMsg, setErrorMsg] = useState('');
@@ -61,7 +65,7 @@ const Contact = () => {
       formRef.current.reset();
     } catch (err) {
       console.error('EmailJS error:', err);
-      setErrorMsg('No se pudo enviar el mensaje. Inténtalo de nuevo.');
+      setErrorMsg(labels.errorMsg);
       setStatus(STATUS.ERROR);
     } finally {
       setTimeout(() => {
@@ -74,8 +78,8 @@ const Contact = () => {
   return (
     <section id="contact" className={styles.contact}>
       <SectionHeader
-        tag="// 05. contacto"
-        title="Trabajemos juntos"
+        tag={labels.tag}
+        title={labels.title}
       />
 
       <div className={`${styles.wrapper} reveal`}>
@@ -91,7 +95,7 @@ const Contact = () => {
               placeholder=" "
               required
             />
-            <label htmlFor="from_name" className={styles.label}>Nombre</label>
+            <label htmlFor="from_name" className={styles.label}>{labels.name}</label>
           </div>
 
           <div className={styles.group}>
@@ -102,7 +106,7 @@ const Contact = () => {
               placeholder=" "
               required
             />
-            <label htmlFor="from_email" className={styles.label}>Email</label>
+            <label htmlFor="from_email" className={styles.label}>{labels.email}</label>
           </div>
 
           <div className={styles.group}>
@@ -112,10 +116,10 @@ const Contact = () => {
               placeholder=" "
               required
             />
-            <label htmlFor="message" className={styles.label}>Mensaje</label>
+            <label htmlFor="message" className={styles.label}>{labels.message}</label>
           </div>
 
-          <SubmitButton status={status} />
+          <SubmitButton status={status} labels={labels} />
 
           {status === STATUS.ERROR && (
             <p className={styles.errorMsg}>
@@ -128,16 +132,16 @@ const Contact = () => {
 
         {/* ── Redes sociales ── */}
         <div className={styles.socials}>
-          <a href="https://github.com/jhonnysotab?tab=repositories" className={styles.socialLink} aria-label="GitHub" target="_blank" rel="noreferrer">
+          <a href={profile.social.github} className={styles.socialLink} aria-label="GitHub" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          <a href="https://www.linkedin.com/in/jhonnysotabautista/" className={styles.socialLink} aria-label="LinkedIn" target="_blank" rel="noreferrer">
+          <a href={profile.social.linkedin} className={styles.socialLink} aria-label="LinkedIn" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
-          <a href="https://wa.me/34614970962?text=Hola%20%F0%9F%91%8B" className={styles.socialLink} aria-label="WhatsApp" target="_blank" rel="noreferrer">
+          <a href={profile.social.whatsapp} className={styles.socialLink} aria-label="WhatsApp" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faWhatsapp} />
           </a>
-          <a href="#" className={styles.socialLink} aria-label="Inicio">
+          <a href={profile.social.home} className={styles.socialLink} aria-label="Home">
             <FontAwesomeIcon icon={faHouse} />
           </a>
         </div>

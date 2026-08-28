@@ -67,7 +67,7 @@
 
 .stack {
   padding: 16px 24px;
-  border-top: 1px solid rgba(0, 245, 212, 0.06);
+  border-top: 1px solid rgba(var(--neon-rgb), 0.06);
   display: flex;
   flex-wrap: wrap;
   gap: 6px;

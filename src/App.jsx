@@ -1,17 +1,18 @@
-import { useEffect } from 'react';
+import { Suspense, lazy } from 'react';
 import Navbar from './components/organisms/Navbar/Navbar';
 import Hero from './components/organisms/Hero/Hero';
 import About from './components/organisms/About/About';
 import Skills from './components/organisms/Skills/Skills';
-import Projects from './components/organisms/Projects/Projects';
-import TerminalSection from './components/organisms/TerminalSection/TerminalSection';
-import Contact from './components/organisms/Contact/Contact';
-import Footer from './components/organisms/Footer/Footer';
 import CustomCursor from './components/atoms/CustomCursor/CustomCursor';
-import ParticleBackground from './components/atoms/ParticleBackground/ParticleBackground';
+import Ps1Background from './components/atoms/Ps1Background/Ps1Background';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import styles from './App.module.css';
-import Experience from './components/organisms/Experience/Experience';
+
+const Experience = lazy(() => import('./components/organisms/Experience/Experience'));
+const Projects = lazy(() => import('./components/organisms/Projects/Projects'));
+const TerminalSection = lazy(() => import('./components/organisms/TerminalSection/TerminalSection'));
+const Contact = lazy(() => import('./components/organisms/Contact/Contact'));
+const Footer = lazy(() => import('./components/organisms/Footer/Footer'));
 
 function App() {
   useScrollReveal();
@@ -19,18 +20,22 @@ function App() {
   return (
     <div className={styles.app}>
       <CustomCursor />
-      <ParticleBackground />
+      <Ps1Background />
       <Navbar />
       <main>
         <Hero />
         <About />
         <Skills />
-         <Experience />
-        <Projects />
-        <TerminalSection />
-        <Contact />
+        <Suspense fallback={null}>
+          <Experience />
+          <Projects />
+          <TerminalSection />
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

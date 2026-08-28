@@ -2,15 +2,15 @@
   max-width: 750px;
   margin: 0 auto;
   background: var(--terminal-bg);
-  border: 1px solid rgba(0, 245, 212, 0.2);
-  border-radius: 8px;
+  border: 1px solid rgba(var(--neon-rgb), 0.2);
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 0 60px rgba(0, 245, 212, 0.05), 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 60px rgba(var(--neon-rgb), 0.05), 0 20px 40px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .terminal:hover {
-  box-shadow: 0 0 80px rgba(0, 245, 212, 0.1), 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 80px rgba(var(--neon-rgb), 0.1), 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .header {
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  border-bottom: 1px solid rgba(0, 245, 212, 0.1);
+  border-bottom: 1px solid rgba(var(--neon-rgb), 0.1);
 }
 
 .dot {
@@ -60,7 +60,7 @@
 }
 
 .body::-webkit-scrollbar-thumb {
-  background: rgba(0, 245, 212, 0.2);
+  background: rgba(var(--neon-rgb), 0.2);
   border-radius: 3px;
 }
 

@@ -12,8 +12,9 @@
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: 700;
+  font-family: var(--font-pixel-mono);
+  font-size: 13px;
+  font-weight: 400;
   background: linear-gradient(90deg, var(--neon), var(--neon2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

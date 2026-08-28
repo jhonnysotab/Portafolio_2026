@@ -1,49 +1,63 @@
+:root {
+  --font-pixel-display: 'VT323', monospace;
+  --font-pixel-mono: 'Press Start 2P', monospace;
+}
+
 :root,
 [data-theme="dark"] {
-  --neon: #00f5d4;
-  --neon2: #7b2fff;
-  --dark: #060612;
-  --dark2: #0d0d1f;
+  --neon: #4c9aff;
+  --neon2: #ff5da2;
+  --neon-rgb: 76, 154, 255;
+  --neon2-rgb: 255, 93, 162;
+  --dark: #050218;
+  --dark2: #0d0a33;
   --text: #e0e0ff;
   --text-secondary: rgba(224, 224, 255, 0.7);
   --text-muted: #e0e0ff;
-  --border-color: rgba(0, 245, 212, 0.1);
-  --glow-color: rgba(0, 245, 212, 0.04);
+  --border-color: rgba(var(--neon-rgb), 0.1);
+  --glow-color: rgba(var(--neon-rgb), 0.04);
   --card-bg: #0a0a1a;
-  --card-bg-alt: rgba(0, 245, 212, 0.02);
+  --card-bg-alt: rgba(var(--neon-rgb), 0.02);
   --nav-bg: rgba(6, 6, 18, 0.588);
   --section-bg: rgba(13, 13, 31, 0.5);
-  --input-bg: rgba(0, 245, 212, 0.02);
-  --input-border: rgba(0, 245, 212, 0.15);
-  --gradient-start: #1a1a3e;
-  --gradient-end: #2d0050;
+  --input-bg: rgba(var(--neon-rgb), 0.02);
+  --input-border: rgba(var(--neon-rgb), 0.15);
+  --gradient-start: #0a0a2e;
+  --gradient-end: #3d0a3f;
   --terminal-bg: #0a0a0a;
   --terminal-header: #111;
-  --tag-border: rgba(0, 245, 212, 0.2);
-  --shadow: rgba(0, 245, 212, 0.1);
-  --stat-bg: rgba(0, 245, 212, 0.03);
-  --stat-border: rgba(0, 245, 212, 0.15);
+  --tag-border: rgba(var(--neon-rgb), 0.2);
+  --shadow: rgba(var(--neon-rgb), 0.1);
+  --stat-bg: rgba(var(--neon-rgb), 0.03);
+  --stat-border: rgba(var(--neon-rgb), 0.15);
   --cursor-opacity:0.5;
   --title:  #fafafa;
   --esin:  rgba(224, 224, 255, 0.4);
-  --button-bg:#00f5d4;
+  --button-bg:#4c9aff;
   --skill-bg:rgba(37, 37, 97, 0.132);
-  --skill-bg-module:rgba(0, 245, 212, 0.02);
-  --skill-borde-: rgba(0, 245, 212, 0.1);
+  --skill-bg-module:rgba(var(--neon-rgb), 0.02);
+  --skill-borde-: rgba(var(--neon-rgb), 0.1);
   --text-tag:  rgba(224, 224, 255, 0.5);
   --bg-project-card: #0a0a1a;
-  --number-project-card: rgba(0, 245, 212, 0.06);
+  --number-project-card: rgba(var(--neon-rgb), 0.06);
   --tagcolor: rgba(224, 224, 255, 0.4);
   --sociallink:#ffff;
   --copytext:#ffff;
+  --track-bg: rgba(255, 255, 255, 0.06);
+  --btn-hover-bg: #ffffff;
+  --btn-hover-text: #000;
+  --grouptextarea: rgba(var(--neon-rgb), 0.03);
+  --lang-active-text: #04120f;
 
 }
 
 [data-theme="light"] {
-  --neon: #030325;
-  --neon2: #586effd0;
-  --dark: #ffffff60;
-  --dark2: #e2e8f0;
+  --neon: #15194f;
+  --neon2: #b23a7a;
+  --neon-rgb: 21, 25, 79;
+  --neon2-rgb: 178, 58, 122;
+  --dark: #eef0f6;
+  --dark2: #dfe3ec;
   --text: #1e293b;
   --text-secondary: rgba(30, 41, 59, 0.85);
   --text-muted: rgba(48, 57, 146, 0.836);
@@ -51,7 +65,7 @@
   --glow-color: rgba(9, 9, 9, 0.174);
   --card-bg: #ffffff;
   --card-bg-alt: rgba(13, 148, 136, 0.03);
-  --nav-bg: rgba(167, 167, 167, 0.344);
+  --nav-bg: rgba(255, 255, 255, 0.75);
   --section-bg: rgba(226, 232, 240, 0.6);
   --input-bg: #ffffff;
   --input-border: rgba(13, 148, 136, 0.2);
@@ -66,14 +80,18 @@
   --cursor-opacity:2;
   --title: #000;
   --esin:  rgba(21, 21, 21, 0.733);
-  --button-bg:#6366f1;
-  --skill-bg: linear-gradient(360deg,rgba(87, 83, 83, 0) 28%, rgba(163, 163, 163, 0) 61%);
+  --button-bg:#3b6fd6;
+  --skill-bg: linear-gradient(180deg, rgba(99, 102, 241, 0.05) 0%, rgba(99, 102, 241, 0) 55%);
   --skill-bg-module: linear-gradient(360deg, rgba(248, 248, 248, 0.708), rgba(255, 255, 255, 0.122));
   --text-tag:  rgb(14, 14, 14);
-  --bg-project-card: linear-gradient(0deg,rgba(41, 41, 41, 1) 0%, rgba(130, 130, 130, 0.73) 21%, rgba(247, 251, 252, 0.09) 73%);
-  --number-project-card: rgba(100, 100, 100, 0.467);
-  --tagcolor: rgb(208, 208, 208);
-  --grouptextarea: rgba(175, 175, 175, 0.782); 
+  --bg-project-card: linear-gradient(160deg, #ffffff 0%, #f1f5f9 100%);
+  --number-project-card: rgba(3, 3, 37, 0.08);
+  --tagcolor: #8a2d68;
+  --grouptextarea: rgba(241, 245, 249, 0.9);
   --sociallink:#000;
   --copytext:#000;
+  --track-bg: rgba(15, 23, 42, 0.1);
+  --btn-hover-bg: #15194f;
+  --btn-hover-text: #fff;
+  --lang-active-text: #ffffff;
 }

@@ -1,10 +1,8 @@
-import { createContext, useState, useEffect } from 'react';
-import es from '../i18n/es.json';
-import en from '../i18n/en.json';
+import { useState, useEffect } from 'react';
+import profile from '../data/profile.json';
+import { LanguageContext } from './language-context';
 
-export const LanguageContext = createContext();
-
-const translations = { es, en };
+const translations = { es: profile.es, en: profile.en };
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {

@@ -2,13 +2,13 @@
   position: fixed;
   width: 12px;
   height: 12px;
-  background: var(--neon);
+  background: radial-gradient(circle, #fff 0%, var(--neon) 55%, transparent 100%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, opacity 0.2s;
-  
+  transition: width 0.2s, height 0.2s, opacity 0.2s, transform 0.15s ease-out;
+  animation: cursorPulse 2.4s ease-in-out infinite;
 }
 
 .ring {
@@ -16,17 +16,29 @@
   width: 36px;
   height: 36px;
   border: 1.5px solid var(--neon);
+  border-top-color: var(--neon2);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s;
-  opacity: 0.5;
+  transition: width 0.2s, height 0.2s, transform 0.15s ease-out, border-color 0.3s ease;
+  opacity: 0.6;
+}
+
+@keyframes cursorPulse {
+  0%, 100% { box-shadow: 0 0 8px 1px var(--neon); }
+  50% { box-shadow: 0 0 16px 4px var(--neon2); }
 }
 
 @media (max-width: 768px) {
   .cursor,
   .ring {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
   }
 }

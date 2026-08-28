@@ -19,6 +19,22 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Líneas de escaneo CRT retro, sobre toda la página */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 0px,
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
 @media (max-width: 768px) {
   body {
     cursor: auto;

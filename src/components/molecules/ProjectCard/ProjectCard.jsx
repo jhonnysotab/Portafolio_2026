@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import Tag from '../../atoms/Tag/Tag';
 import styles from './ProjectCard.module.css';
 
-const ProjectCard = ({ number, type, title, description, tags, demo, github }) => {
+const ProjectCard = ({ number, type, title, description, tags, demo, github, demoLabel = 'Demo', githubLabel = 'GitHub' }) => {
   const cardRef = useRef(null);
   const glowRef = useRef(null);
 
@@ -34,8 +34,8 @@ const ProjectCard = ({ number, type, title, description, tags, demo, github }) =
         ))}
       </div>
       <div className={styles.footer}>
-        <a href={demo} className={styles.link}>→ Ver demo</a>
-        <a href={github} className={styles.link}>→ GitHub</a>
+        <a href={demo} className={styles.link} target="_blank" rel="noreferrer">→ {demoLabel}</a>
+        <a href={github} className={styles.link} target="_blank" rel="noreferrer">→ {githubLabel}</a>
       </div>
     </div>
   );

@@ -23,14 +23,14 @@
 .group textarea {
   width: 100%;
   background:var(--grouptextarea);
-  border: 1px solid rgba(0, 245, 212, 0.15);
+  border: 1px solid rgba(var(--neon-rgb), 0.15);
   color: var(--text);
   padding: 16px 20px;
   font-size: 14px;
   font-family: inherit;
   outline: none;
   transition: border-color 0.3s;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .group input:focus,
@@ -50,7 +50,7 @@
   left: 20px;
   transform: translateY(-50%);
   font-size: 13px;
-  color: rgb(255, 255, 255);
+  color: var(--text-secondary);
   pointer-events: none;
   transition: all 0.2s;
   letter-spacing: 0.5px;
@@ -87,7 +87,7 @@
 .socialLink {
   width: 48px;
   height: 48px;
-  border: 1px solid rgba(0, 245, 212, 0.2);
+  border: 1px solid rgba(var(--neon-rgb), 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,7 +103,7 @@
 .socialLink:hover {
   border-color: var(--neon);
   color: var(--neon);
-  background: rgba(0, 245, 212, 0.05);
+  background: rgba(var(--neon-rgb), 0.05);
   transform: translateY(-3px);
 }
 

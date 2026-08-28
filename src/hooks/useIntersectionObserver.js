@@ -5,18 +5,17 @@ export const useIntersectionObserver = (options = {}) => {
   const targetRef = useRef(null);
 
   useEffect(() => {
+    const node = targetRef.current;
+    if (!node) return;
+
     const observer = new IntersectionObserver(([entry]) => {
       setIsIntersecting(entry.isIntersecting);
     }, { threshold: 0.15, ...options });
 
-    if (targetRef.current) {
-      observer.observe(targetRef.current);
-    }
+    observer.observe(node);
 
     return () => {
-      if (targetRef.current) {
-        observer.unobserve(targetRef.current);
-      }
+      observer.unobserve(node);
     };
   }, [options]);
 
