@@ -1,0 +1,1 @@
+import{a as e,j as o}from"./index-7ee70e86.js";const r="Footer-module__footer__gFVay",s={footer:r},n=()=>{const{t}=e();return o.jsx("footer",{className:s.footer,children:o.jsx("p",{children:t("footer.text")})})};export{n as default};
